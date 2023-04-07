@@ -1,0 +1,2 @@
+GET http://api.weatherapi.com/v1/forecast.json?key=450188f0acdf4ba1988235550230604&q=itabira HTTP/1.1
+content-type: application/json
