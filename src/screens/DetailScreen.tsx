@@ -28,7 +28,7 @@ import { ThemeContext } from "../context/themeContext";
 
 const getForecast = async (countryName: string): Promise<ForecastInterface> => {
   const response = await axios.get(
-    `http://api.weatherapi.com/v1/forecast.json?key=${
+    `https://api.weatherapi.com/v1/forecast.json?key=${
       import.meta.env.VITE_KEY
     }&q=${countryName}`
   );
