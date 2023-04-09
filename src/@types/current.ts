@@ -1,4 +1,4 @@
-interface Location {
+export interface Location {
     name: string,
     region: string,
     country: string,
@@ -15,11 +15,7 @@ export interface Current {
     temp_c: number,
     temp_f: number,
     is_day: number,
-    condition: {
-        text: string,
-        icon: string,
-        code: number
-    },
+    condition: Condition,
     wind_mph: number,
     wind_kph: number,
     wind_degree: number,
@@ -39,8 +35,15 @@ export interface Current {
     gust_kph: number
 }
 
-export interface CurrentWeather {
-    location: Location,
-    current: Current
+interface Condition {
+    text: string,
+    icon: string,
+    code: number
 }
+
+interface CurrentWeather {
+    current: Current,
+    condition: Condition
+}
+
 

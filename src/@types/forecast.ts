@@ -67,10 +67,14 @@ interface Astro {
     moon_illumination: string,
 }
 
-export interface Forecast {
-    day: string,
+export interface Forecastday {
     date_epoch: number,
-    daay: Day,
+    day: Day,
     astro: Astro,
     hour: Hour[]
 }
+
+export interface Forecast {
+    forecastday: Forecastday[]
+}
+
