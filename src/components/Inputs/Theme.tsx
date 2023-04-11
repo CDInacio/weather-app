@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { BsSun, BsSunFill, BsMoonFill, BsMoon } from "react-icons/bs";
 
 import { ThemeContext } from "../../context/themeContext";
