@@ -17,7 +17,7 @@ const Error = () => {
         </div>
 
         <button
-          className="text-start mt-5 font-bold"
+          className="text-start mt-5 font-bold dark:text-neutral-200"
           onClick={() => navigate("/")}
         >
           Voltar
