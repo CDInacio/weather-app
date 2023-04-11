@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "../screens/Home";
+import ErrorBoundary from "../components/Error/Error";
 import DetailScreen from "../screens/DetailScreen";
+import Home from "../screens/Home";
 
 const router = createBrowserRouter([
   {
