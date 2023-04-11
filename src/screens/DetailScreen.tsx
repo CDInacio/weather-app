@@ -15,7 +15,7 @@ import Menu from "../components/Navigation/Menu";
 
 const getForecast = async (countryName: string): Promise<ForecastInterface> => {
   const response = await axios.get(
-    `https://api.weatherapi.com/v1/forsecast.json?key=${
+    `https://api.weatherapi.com/v1/forecast.json?key=${
       import.meta.env.VITE_KEY
     }&q=${countryName}`
   );
