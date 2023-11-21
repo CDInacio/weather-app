@@ -23,7 +23,7 @@ const getForecast = async (countryName: string): Promise<ForecastInterface> => {
   return response.data;
 };
 const DetailScreen = () => {
-  const [dataShown, setDataShown] = useState<string>("today");
+  const [dataShown, setDataShown] = useState<string>("todayy");
   const { countryName } = useParams();
 
   const { isLoading, isError, data, error } = useQuery({
