@@ -56,7 +56,7 @@ const DetailScreen = () => {
       ) : (
         <div className="flex mt-24 sm:mt-0 flex-col  sm:flex-row justify-center  mx-6 container">
           <Location {...locationProps} />
-          <div className="bg-panel over dark:bg-darkPanel  p-6 rounded-bl-xl rounded-br-xl sm:rounded-bl-none sm:rounded-tr-xl sm:rounded-br-xl">
+          <div className="bg-panel over dark:bg-darkPanel  p-5 rounded-bl-xl rounded-br-xl sm:rounded-bl-none sm:rounded-tr-xl sm:rounded-br-xl">
             <Menu dataShown={dataShown} onDataShow={handleDataShow} />
             {dataShown === "today" ? (
               <CurrentWeather current={data?.current} />
