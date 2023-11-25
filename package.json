@@ -2,7 +2,7 @@
   "name": "weather",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:5173",
+  "proxy": "http://apiadvisor.climatempo.com.br",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "^20.10.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
