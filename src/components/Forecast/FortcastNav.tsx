@@ -38,7 +38,7 @@ const ForecastNav = ({ onChooseForecast, day }: ForecastNavProps) => {
         <button
           key={`${date.text} ${i}`}
           onClick={() => onChooseForecast(date.text)}
-          className={`text-sm font-semibold text-neutral-600 mr-4 rounded px-5 py-3 ${
+          className={`text-sm font-semibold text-neutral-600 mr-4 rounded px-3 md:px-5 py-2 md:py-3 mt-4 md:mt-0 ${
             day === date.text ? "bg-neutral-800 text-white" : "bg-neutral-200"
           }`}
         >
