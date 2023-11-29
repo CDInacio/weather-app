@@ -4,6 +4,7 @@ import "moment/locale/pt-br";
 import { useWeather } from "../../context/forecastContext";
 import { format } from "../../helpers/format";
 import { truncate } from "../../helpers/truncate";
+import UseWidth from "../../hooks/UseWidth";
 import { Current, Forecast, Forecastday } from "../../types";
 import Icon from "../Icon";
 import IndicatorItem from "./IndicatorItem";
@@ -51,6 +52,10 @@ const getIndicators = (current: Current, forecast: Forecast) => [
 
 const CurrentIndicators = () => {
   const { state } = useWeather();
+  const { width } = UseWidth();
+
+  console.log(width);
+
   const indicators = getIndicators(state.current, state.forecast);
 
   return (
@@ -72,10 +77,12 @@ const CurrentIndicators = () => {
           <div className="flex items-center">
             <Icon type="date" />
             <p className="ml-2 text-sm md:text-base">
-              {truncate(
-                moment(state.location?.localtime).format("DD [de] MMMM"),
-                10
-              )}
+              {width > 767
+                ? truncate(
+                    moment(state.location?.localtime).format("DD [de] MMMM"),
+                    10
+                  )
+                : moment(state.location?.localtime).format("DD [de] MMMM")}
             </p>
           </div>
         </div>
