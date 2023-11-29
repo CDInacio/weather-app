@@ -14,7 +14,7 @@ const Home = () => {
           </h3>
         </div>
         <img
-          alt=""
+          alt="icone de tempo"
           src="/images/weather-1.svg"
           className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] "
         />
