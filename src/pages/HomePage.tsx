@@ -1,15 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import "moment/dist/locale/pt-br";
 
 import SearchInput from "../components/input/searchInput";
-import UseSearch from "../hooks/UseSearch";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const { results } = UseSearch();
-
   return (
-    <main className="w-screen h-screen flex items-center  flex-col relative">
-      <SearchInput />
+    <main className="w-screen min-h-screen flex  flex-col justify-center items-center  relative  ">
+      <div className="flex flex-col  items-center ">
+        <div>
+          <h1 className="text-3xl font-bold text-center"> Seja Bem-Vindo</h1>
+          <h3 className="text-neutral-600 text-center text-sm">
+            {" "}
+            Veja a previsão do tempo de sua cidade
+          </h3>
+        </div>
+        <img
+          alt=""
+          src="/images/weather-1.svg"
+          className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] "
+        />
+      </div>
+      <SearchInput className="" />
     </main>
   );
 };

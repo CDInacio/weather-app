@@ -1,28 +1,38 @@
-import { IoSearch } from "react-icons/io5";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import UseSearch from "../../hooks/UseSearch";
+import { twMerge } from "tailwind-merge";
 
-const SearchInput = () => {
-  const { handleSearch, setCity } = UseSearch();
+interface SearchInputProps {
+  className?: string;
+}
+
+const SearchInput = ({ className }: SearchInputProps) => {
+  const navigate = useNavigate();
+  const [search, setSeatch] = useState("");
+
+  const handleNavigate = () => {
+    navigate(`/${search}`);
+  };
 
   return (
-    <div className="relative bg-teal-300 mt-52">
+    <div className="relative">
       <input
         onChange={(e) => {
-          setCity(e.target.value);
+          setSeatch(e.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            handleSearch();
+            handleNavigate();
           }
         }}
         type="text"
         placeholder="Informe o nome da cidade..."
-        className=" px-5 py-2 rounded bg-neutral-300 w-96  "
+        className={twMerge(
+          "py-2 rounded bg-neutral-200 w-96  px-5 focus:bg-neutral-300 transition duration-300 ease-in-out",
+          className
+        )}
       />
-      <span className="absolute">
-        <IoSearch />
-      </span>
     </div>
   );
 };
