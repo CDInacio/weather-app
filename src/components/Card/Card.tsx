@@ -12,7 +12,7 @@ const Card = ({
   return (
     <div
       className={twMerge(
-        "rounded  p-10 max-w-[1200px] absolute  bg-white",
+        "rounded  p-10 max-w-[1200px] mx-auto my-10  bg-white",
         className
       )}
     >
