@@ -55,7 +55,7 @@ const CurrentIndicators = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-full md:h-[350px]">
-      <div className="flex w-[250px] items-center px-10 py-5 border-[1px] mb-10 h-full border-neutral-800 rounded bg-neutral-200">
+      <div className="flex w-full md:w-[250px] items-center px-10 py-5 border-[1px] mb-10 h-full border-neutral-800 rounded bg-neutral-200">
         <div>
           <div>
             <img src={state.current?.condition.icon} width={55} height={55} />
