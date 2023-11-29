@@ -19,7 +19,7 @@ const Home = () => {
           className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] "
         />
       </div>
-      <SearchInput className="" />
+      <SearchInput className="w-[300px] sm:w-[400px] md:w-[450px]" />
     </main>
   );
 };
