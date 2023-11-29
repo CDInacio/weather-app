@@ -18,7 +18,7 @@ const WeatherDetails = () => {
 
   if (error?.error.code && !isLoading) {
     content = (
-      <div className="w-screen h-screen justify-center flex flex-col items-center">
+      <div className="w-screen h-screen justify-center mx-auto flex flex-col items-center">
         <SearchInput className="my-5 w-[300px] sm:w-[400px] md:w-[450px]" />
         <p className="font-medium text-sm">
           Não foi possível encontrar informações sobre o local.
@@ -45,7 +45,7 @@ const WeatherDetails = () => {
 
   if (!isLoading && !error?.error.code) {
     content = (
-      <>
+      <div className="px-5 overflow-x-hidden">
         <Card>
           <SearchInput className="my-5 w-full md:w-[50%]" />
           <h1 className="text-2xl font-medium mb-6">Resumo de hoje</h1>
@@ -55,11 +55,11 @@ const WeatherDetails = () => {
             <Forecast />
           </div>
         </Card>
-      </>
+      </div>
     );
   }
 
-  return <div className="px-5 overflow-x-hidden">{content}</div>;
+  return content;
 };
 
 export default WeatherDetails;
