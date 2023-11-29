@@ -20,7 +20,7 @@ const WeatherDetails = () => {
   if (error?.error.code && !isLoading) {
     content = (
       <Card className="flex flex-col items-center">
-        <SearchInput className="my-5" />
+        <SearchInput className="my-5 w-full" />
         <p className="font-medium text-sm">
           Não foi possível encontrar informações sobre o local.
         </p>
@@ -33,9 +33,9 @@ const WeatherDetails = () => {
     );
   }
 
-  if (isLoading) {
+  if (isLoading || !isLoading) {
     content = (
-      <div className="flex flex-col w-screen h-screen items-center justify-center">
+      <div className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center ">
         <div className="flex justify-center items-center ">
           <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid border-8 h-16 w-16"></div>
         </div>
@@ -48,7 +48,7 @@ const WeatherDetails = () => {
     content = (
       <>
         <Card>
-          <SearchInput className="my-5" />
+          <SearchInput className="my-5 w-full md:w-[50%]" />
           <h1 className="text-2xl font-medium mb-6">Resumo de hoje</h1>
           <CurrentIndicators />
           <div>
@@ -61,7 +61,7 @@ const WeatherDetails = () => {
   }
 
   return (
-    <div className="w-screen min-h-screen flex justify-center   container mx-auto px-5 my-10 ">
+    <div className="px-5 overflow-x-hidden">
       {content}
     </div>
   );
