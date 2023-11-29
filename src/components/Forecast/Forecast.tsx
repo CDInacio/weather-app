@@ -28,7 +28,7 @@ const Forecast = () => {
       <ForecastNav day={forecastDay} onChooseForecast={setForecastDay} />
       {forecastData.map((day, i) => (
         <div key={day.date + i}>
-          <div className="grid grid-cols-2 md:grid-cols-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ">
             {day.hour
               .filter((h, i) => i % 3 === 0 && i < 12)
               .map((h, i) => (
