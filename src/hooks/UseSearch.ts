@@ -12,7 +12,7 @@ const UseSearch = () => {
     setIsLoading(true);
     try {
       const response = await api.get(
-        `http://api.weatherapi.com/v1/current.json?key=8281a2fb7f824218ab7140941232411&q=${city}`,
+        `https://api.weatherapi.com/v1/current.json?key=8281a2fb7f824218ab7140941232411&q=${city}`,
         {
           params: {
             lang: "pt",
