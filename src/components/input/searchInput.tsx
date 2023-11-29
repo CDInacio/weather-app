@@ -29,7 +29,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
         type="text"
         placeholder="Informe o nome da cidade..."
         className={twMerge(
-          "py-2 rounded bg-neutral-200 w-96  px-5 focus:bg-neutral-300 transition duration-300 ease-in-out",
+          "py-2 rounded bg-neutral-200   px-5 focus:bg-neutral-300 transition duration-300 ease-in-out",
           className
         )}
       />
