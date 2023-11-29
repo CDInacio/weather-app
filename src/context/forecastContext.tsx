@@ -22,7 +22,7 @@ const ForecastProvider = ({ children }: any) => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=f4b344c2a21f428e90011107232711&q=${city}&days=3&aqi=no&alerts=no
+        `https://api.weatherapi.com/v1/forecast.json?key=f4b344c2a21f428e90011107232711&q=${city}&days=3&aqi=no&alerts=no
         `,
         {
           params: {
