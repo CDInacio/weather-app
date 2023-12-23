@@ -54,8 +54,6 @@ const CurrentIndicators = () => {
   const { state } = useWeather();
   const { width } = UseWidth();
 
-  console.log(width);
-
   const indicators = getIndicators(state.current, state.forecast);
 
   return (
