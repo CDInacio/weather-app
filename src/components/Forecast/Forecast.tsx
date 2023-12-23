@@ -18,14 +18,18 @@ const Forecast = () => {
   }
 
   if (forecastDay !== "Todos") {
-    forecastData = dummyData.forecast.forecastday.filter(
+    forecastData = state.forecast.forecastday.filter(
       (day) => format(day.date, "DD [de] MMM") === forecastDay
     );
   }
 
   return (
     <>
-      <ForecastNav day={forecastDay} onChooseForecast={setForecastDay} />
+      <ForecastNav
+        menuDays={state.forecast.forecastday}
+        selectedDay={forecastDay}
+        onChooseForecast={setForecastDay}
+      />
       {forecastData.map((day, i) => (
         <div key={day.date + i}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ">
