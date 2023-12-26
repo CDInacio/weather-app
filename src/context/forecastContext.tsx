@@ -30,6 +30,7 @@ const ForecastProvider = ({ children }: any) => {
 
   const handleSearch = async (city: string | undefined) => {
     setIsLoading(true);
+    console.log("city");
     setError(null as unknown as Error);
     try {
       const response = await axios.get(
