@@ -15,30 +15,33 @@ const ForecastNav = ({
   selectedDay,
   menuDays,
 }: ForecastNavProps) => {
-  const forecastDates = useMemo(() => {
-    return menuDays.map((day) => moment(day.date).format("DD [de] MMM"));
-  }, []);
+  const forecastDates = menuDays?.map((day) =>
+    moment(day.date).format("DD [de] MMM")
+  );
 
-  const foretecastMenu = useMemo(() => {
-    return [
-      {
-        text: "Todos",
-      },
-      {
-        text: forecastDates[0],
-      },
-      {
-        text: forecastDates[1],
-      },
-      {
-        text: forecastDates[2],
-      },
-    ];
-  }, [forecastDates]);
+  let foretecastMenu;
+  if (forecastDates) {
+    foretecastMenu = useMemo(() => {
+      return [
+        {
+          text: "Todos",
+        },
+        {
+          text: forecastDates[0],
+        },
+        {
+          text: forecastDates[1],
+        },
+        {
+          text: forecastDates[2],
+        },
+      ];
+    }, [forecastDates]);
+  }
 
   return (
     <nav className="mb-5">
-      {foretecastMenu.map((date, i) => (
+      {foretecastMenu?.map((date, i) => (
         <button
           key={`${date.text} ${i}`}
           onClick={() => onChooseForecast(date.text)}
