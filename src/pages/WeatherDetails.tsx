@@ -8,32 +8,18 @@ import SearchInput from "../components/input/searchInput";
 import { useWeather } from "../context/forecastContext";
 
 const WeatherDetails = () => {
-  const { city } = useParams<{ city: string }>();
+  const { city } = useParams();
   const { handleSearch, isLoading, error } = useWeather();
-  let content = null;
 
   useEffect(() => {
-    handleSearch(city!);
+    if (city) {
+      console.log("to aqui");
+      handleSearch(city!);
+    }
   }, [city]);
 
-  if (error?.error.code && !isLoading) {
-    content = (
-      <div className="w-screen h-screen justify-center mx-auto flex flex-col items-center">
-        <SearchInput className="my-5 w-[300px] sm:w-[400px] md:w-[450px]" />
-        <p className="font-medium text-sm">
-          Não foi possível encontrar informações sobre o local.
-        </p>
-        <img
-          alt="icone de informação não encontrada"
-          src="/images/no-data.svg"
-          className="w-[300px] h-[300px]"
-        />
-      </div>
-    );
-  }
-
   if (isLoading) {
-    content = (
+    return (
       <div className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center ">
         <div className="flex justify-center items-center ">
           <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid border-8 h-16 w-16"></div>
@@ -43,8 +29,8 @@ const WeatherDetails = () => {
     );
   }
 
-  if (!isLoading && !error?.error.code) {
-    content = (
+  if (!isLoading) {
+    return (
       <div className="px-5 overflow-x-hidden">
         <Card>
           <SearchInput className="my-5 w-full md:w-[50%]" />
@@ -58,8 +44,6 @@ const WeatherDetails = () => {
       </div>
     );
   }
-
-  return content;
 };
 
 export default WeatherDetails;
