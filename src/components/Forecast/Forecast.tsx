@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import { dummyData } from "../../DUMMY_DATA";
 import { useWeather } from "../../context/forecastContext";
 import { format } from "../../helpers/format";
 import { Forecastday } from "../../types";
@@ -14,7 +13,7 @@ const Forecast = () => {
   let forecastData: Forecastday[] = [];
 
   if (forecastDay === "Todos") {
-    forecastData = dummyData.forecast.forecastday;
+    forecastData = state.forecast.forecastday;
   }
 
   if (forecastDay !== "Todos") {
