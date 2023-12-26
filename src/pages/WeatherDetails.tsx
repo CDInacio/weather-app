@@ -13,7 +13,6 @@ const WeatherDetails = () => {
 
   useEffect(() => {
     if (city) {
-      console.log("to aqui");
       handleSearch(city!);
     }
   }, [city]);
