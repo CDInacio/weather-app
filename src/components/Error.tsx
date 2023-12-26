@@ -9,7 +9,11 @@ const Error = () => {
 
   return (
     <div className="w-screen h-screen text-sm md:text-base px-5 flex items-center justify-center flex-col">
-      <img src="/images/error.svg" className="w-[400px] h-[400px] " />
+      <img
+        src="/images/error.svg"
+        className="w-[400px] h-[400px] "
+        alt="error image"
+      />
       <p className="font-semibold">
         Oops, um erro inesperado aconteceu! Tente novamente mais tarde.
       </p>
