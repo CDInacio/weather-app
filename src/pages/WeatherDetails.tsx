@@ -9,12 +9,10 @@ import { useWeather } from "../context/forecastContext";
 
 const WeatherDetails = () => {
   const { city } = useParams();
-  const { handleSearch, isLoading, error } = useWeather();
+  const { handleSearch, isLoading } = useWeather();
 
   useEffect(() => {
-    if (city) {
-      handleSearch(city!);
-    }
+    handleSearch(city!);
   }, [city]);
 
   if (isLoading) {
@@ -28,21 +26,19 @@ const WeatherDetails = () => {
     );
   }
 
-  if (!isLoading) {
-    return (
-      <div className="px-5 overflow-x-hidden">
-        <Card>
-          <SearchInput className="my-5 w-full md:w-[50%]" />
-          <h1 className="text-2xl font-medium mb-6">Resumo de hoje</h1>
-          <CurrentIndicators />
-          <div>
-            <h1 className="text-2xl font-medium my-6">Próximos 3 dias</h1>
-            <Forecast />
-          </div>
-        </Card>
-      </div>
-    );
-  }
+  return (
+    <div className="px-5 overflow-x-hidden">
+      <Card>
+        <SearchInput className="my-5 w-full md:w-[50%]" />
+        <h1 className="text-2xl font-medium mb-6">Resumo de hoje</h1>
+        <CurrentIndicators />
+        <div>
+          <h1 className="text-2xl font-medium my-6">Próximos 3 dias</h1>
+          <Forecast />
+        </div>
+      </Card>
+    </div>
+  );
 };
 
 export default WeatherDetails;
